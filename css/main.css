@@ -1,0 +1,67 @@
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: large;
+}
+
+li {
+    margin-left: 15px;
+}
+
+li a:hover {
+    text-decoration: underline;
+}
+
+#divResult {
+    position: relative;
+    top: 60px
+}
+
+.col-3 {
+    border: 1px black solid;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 15px 15px;
+}
+
+.col-3:hover {
+    box-shadow: 4px 3px 2px 0px #858191;
+}
+
+div.col-3 {
+    width: 250px;
+    text-align: left;
+    /* display: none; */
+}
+
+h4 {
+    text-align: center;
+}
+
+.row{
+    justify-content: center;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    display:inline-flex;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 10px;
+    justify-content: center;
+}
+
+button {
+    margin-left: 5px;
+    border:none;
+    background-color: transparent;
+    font-size: 20px;
+}
+
+input{
+    font-size: 20px;
+}
