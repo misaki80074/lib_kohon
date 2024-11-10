@@ -47,17 +47,17 @@ promise.then(
 )
 
 // 先取得所有的 div .col-3，只顯示前 20 筆
-promise.then(function () {
-    let dataItems = document.querySelectorAll('.col-3');
+// promise.then(function () {
+//     let dataItems = document.querySelectorAll('.col-3');
 
-    for (let i = 0; i <= dataItems.length; i++) {
-        if (i >= 20) {
-            (dataItems[i]) ? dataItems[i].style.display = 'none' : "";
-        }
-    }
+//     for (let i = 0; i <= dataItems.length; i++) {
+//         if (i >= 20) {
+//             (dataItems[i]) ? dataItems[i].style.display = 'none' : "";
+//         }
+//     }
 
-    scrollEvent();
-})
+//     scrollEvent();
+// })
 
 // 搜尋功能
 promise.then(function () {
@@ -77,11 +77,11 @@ promise.then(function () {
                 // 顯示到畫面
                 arr.forEach( e => {
                     // 把原本的資料隱藏顯示
-                    $('#divResult').empty();
+                    $('#divResult').remove();
 
                     // 把篩選結果顯示到畫面上
                     $(e).css('display', 'block');
-                    $('#test').append(e);
+                    $('#searchResult').append(e);
                 } );
             }
 
