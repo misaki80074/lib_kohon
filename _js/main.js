@@ -47,17 +47,17 @@ promise.then(
 )
 
 // 先取得所有的 div .col-3，只顯示前 20 筆
-// promise.then(function () {
-//     let dataItems = document.querySelectorAll('.col-3');
+promise.then(function () {
+    let dataItems = document.querySelectorAll('.col-3');
 
-//     for (let i = 0; i <= dataItems.length; i++) {
-//         if (i >= 20) {
-//             (dataItems[i]) ? dataItems[i].style.display = 'none' : "";
-//         }
-//     }
+    for (let i = 0; i <= dataItems.length; i++) {
+        if (i >= 20) {
+            (dataItems[i]) ? dataItems[i].style.display = 'none' : "";
+        }
+    }
 
-//     scrollEvent();
-// })
+    scrollEvent();
+})
 
 // 搜尋功能
 promise.then(function () {
@@ -126,9 +126,9 @@ let setData = function () {
         elem.addClass('col-3');
 
         bookNameList[i] ? elem.append(`<h4>${bookNameList[i].innerHTML}</h4>`) : elem.append(`<h4></h4>`);
-        elem.append(`<p>作者：${authorList[i].innerHTML}</p>`);
-        publishYearList[i] ? elem.append(`<p>出版年份：${publishYearList[i].innerHTML}</p>`) : elem.append(`<p>出版年份：</p>`);
-        urlList[i] ? elem.append(`<span>閱覽網址：</span><a href="${urlList[i].innerHTML}" target="_blank">★</a>`) : elem.append(`<span>閱覽網址：</span>`);
+        elem.append(`<p class="author">作者：${authorList[i].innerHTML}</p>`);
+        publishYearList[i] ? elem.append(`<p class="pubYear">出版年份：${publishYearList[i].innerHTML}</p>`) : elem.append(`<p>出版年份：</p>`);
+        urlList[i] ? elem.append(`<p><span>閱覽網址：</span><a href="${urlList[i].innerHTML}" target="_blank">Click</a></p>`) : elem.append(`<span>閱覽網址：</span>`);
 
 
         $('#divResult').append(elem);

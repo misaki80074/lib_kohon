@@ -1,3 +1,16 @@
+/* body */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* header */
+/* nav */
+.topicTitle {
+    color: darkgreen;
+    font-weight: bolder;
+}
+
 nav a {
     text-decoration: none;
     color: black;
@@ -10,6 +23,11 @@ li {
 
 li a:hover {
     text-decoration: underline;
+}
+
+/* data */
+.row{
+    justify-content: center;
 }
 
 #divResult,
@@ -26,42 +44,36 @@ li a:hover {
 }
 
 .col-3:hover {
-    box-shadow: 4px 3px 2px 0px #858191;
+    box-shadow: 4px 3px 2px 0px lightgray;
 }
 
 div.col-3 {
-    width: 250px;
+    width: 300px;
     text-align: left;
 }
 
 h4 {
     text-align: center;
-}
-
-.row{
-    justify-content: center;
-}
-
-form{
+    min-height: 86.4px;
     display: flex;
+    align-items: center;
     justify-content: center;
+    font-weight: bold;
 }
 
-label {
-    display:inline-flex;
-    font-size: 20px;
+.author,
+.pubYear {
+    position: relative;
+    min-height: 48px;
+}
+
+/* footer */
+footer {
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    background-color: rgb(248, 249, 250, 1);
+    height: 25px;
     text-align: center;
-    margin-right: 10px;
-    justify-content: center;
-}
-
-button {
-    margin-left: 5px;
-    border:none;
-    background-color: transparent;
-    font-size: 20px;
-}
-
-input{
-    font-size: 20px;
+    border-top: 1px solid lightgray;
 }

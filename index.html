@@ -14,16 +14,15 @@
   <header>
     <nav class="navbar fixed-top navbar-light bg-light">
       <div class="container">
-        <a href="./index.html"><h3>公資圖<span style="font-weight: bold;">日文舊籍</span>數位典藏</h3></a>
+        <a class="topicTitle" href="./index.html"><h3>公資圖數位典藏日文舊籍數位典藏</h3></a>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a href="#">About here</a></li>
+          <li class="nav-item"><a href="#">使用教學</a></li>
         </ul>
-        <form data-bookfinder-form>
-          <input name="search" type="text" placeholder="請輸入搜尋內容……" id="search_bar" />
+        <form class="d-flex">
+          <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-disabled="true" id="search_bar" />
         </form>
-        <button id="searchBtn">🔍</button>
+        <button id="searchBtn" class="btn btn-outline-success">Search</button>
       </div>
-
     </nav>
   </header>
 
@@ -32,19 +31,14 @@
     <!-- 資料載入 -->
     <div class="container">
       <div class="row" id="divResult">
-
-        <!-- <div class="col-3">
-          <h3>書名：賴山陽</h3>
-          <p>作者：藤森成吉</p>
-          <p>出版日期：昭和17[1942]</p>
-          <span>閱覽網址：</span><a href="https://das.nlpi.edu.tw/handle/89u94" target="_blank">★</a>
-        </div> -->
-
       </div>
       <div class="row" id="searchResult"></div>
     </div>
   </main>
 
+  <footer>
+    <p>© 2024 CopyRight Reserved</p>
+  </footer>
 
   <script src="./_js/jquery-3.6.0.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
