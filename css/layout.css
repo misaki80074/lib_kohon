@@ -1,0 +1,37 @@
+/* body */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* header */
+/* nav */
+.topicTitle {
+    color: darkgreen;
+    font-weight: bolder;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: large;
+}
+
+li {
+    margin-left: 15px;
+}
+
+li a:hover {
+    text-decoration: underline;
+}
+
+/* footer */
+footer {
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    background-color: rgb(248, 249, 250, 1);
+    height: 25px;
+    text-align: center;
+    border-top: 1px solid lightgray;
+}
