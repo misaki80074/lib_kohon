@@ -61,36 +61,29 @@ promise.then(function () {
 
 // 搜尋功能
 promise.then(function () {
-
-    $('#searchBtn').on('click', function () {
-        // 取得 input 的 value
-        let value = $('#search_bar').val();   
-
-        $('.col-3').filter(function () {
-            // 判斷 .col-3 中的文字有沒有包含 value，有會回傳 0
-            let temp = $(this).text().indexOf(value) == 0;
-
-            if (temp) {
-                // 轉換成陣列，資料是 標籤 + 內容
-                var arr = Array.from($(this));
-
-                // 顯示到畫面
-                arr.forEach( e => {
-                    // 把原本的資料隱藏顯示
-                    $('#divResult').remove();
-
-                    // 把篩選結果顯示到畫面上
-                    $(e).css('display', 'block');
-                    $('#searchResult').append(e);
-                } );
-            }
-
-        })
+    // 解決一按 enter 就會重新載入的問題
+    $('form').on('keydown', function(e){
+        if (e.which == 13) {
+        e.preventDefault();
+        // return false;
+        }
     })
 
-    // 當 input 的 value 是空字串時，重新載入頁面
-    $('#search_bar').on('keyup', function(){
-        if( $(this).val() == "") {
+    // 當輸入搜尋文字後按下 enter 就載入搜尋結果
+    $('#search_bar').on('keyup', function (e) {
+        if (e.which == 13) {
+            search();
+        }
+    })
+
+    // 當輸入搜尋文字後按下 Btn 就載入搜尋結果
+    $('#searchBtn').on('click', function () {
+        search();
+    })
+
+    // 當 input 的 value 是空字串、沒有點到 search 時，重新載入頁面
+    $('#search_bar').on('blur', function () {
+        if ($(this).val() == "") {
             window.location.reload();
         }
     })
@@ -126,7 +119,7 @@ let setData = function () {
         elem.addClass('col-3');
 
         bookNameList[i] ? elem.append(`<h4>${bookNameList[i].innerHTML}</h4>`) : elem.append(`<h4></h4>`);
-        elem.append(`<p class="author">作者：${authorList[i].innerHTML}</p>`);
+        authorList[i] ? elem.append(`<p class="author">作者：${authorList[i].innerHTML}</p>`) : elem.append(`<p>作者：</p>`);
         publishYearList[i] ? elem.append(`<p class="pubYear">出版年份：${publishYearList[i].innerHTML}</p>`) : elem.append(`<p>出版年份：</p>`);
         urlList[i] ? elem.append(`<p><span>閱覽網址：</span><a href="${urlList[i].innerHTML}" target="_blank">Click</a></p>`) : elem.append(`<span>閱覽網址：</span>`);
 
@@ -155,5 +148,32 @@ let scrollEvent = function () {
             }
 
         }
+    })
+}
+
+// search method
+function search() {
+    // 取得 input 的 value
+    let value = $('#search_bar').val();
+
+    $('.col-3').filter(function () {
+        // 判斷 .col-3 中的文字有沒有包含 value，有會回傳 0
+        let temp = $(this).text().indexOf(value) == 0;
+
+        if (temp) {
+            // 轉換成陣列，資料是 標籤 + 內容
+            var arr = Array.from($(this));
+
+            // 顯示到畫面
+            arr.forEach(e => {
+                // 把原本的資料隱藏顯示
+                $('#divResult').remove();
+
+                // 把篩選結果顯示到畫面上
+                $(e).css('display', 'block');
+                $('#searchResult').append(e);
+            });
+        }
+
     })
 }
