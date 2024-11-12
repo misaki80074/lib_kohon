@@ -1,0 +1,39 @@
+main {
+    position: relative;
+    top: 60px;
+    width: 90%;
+    margin: auto;
+}
+
+h1,h2 {
+    margin: 10px 0 0 10px;
+}
+
+.basicArea p,
+.searchArea p,
+.cancelSearchArea p{
+    margin-top: 10px;
+    margin-left: 50px;
+    font-size: 18px;
+}
+
+.basicArea img,
+.searchArea img,
+.cancelSearchArea img{
+    width: 70%;
+    margin-left: 60px;
+    margin-bottom: 20px;
+}
+
+.datasourcedesc{
+    font-size: 18px;
+    margin-bottom: 60px;
+}
+
+footer {
+    position: relative;
+}
+
+/* @media screen(min-width: 768px) {
+    
+} */
